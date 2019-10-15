@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="profesorApp"> <!--directiva para decir que es una aplicacion de angular-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--hoja de estilos css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--hoja de estilos para animaciones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!--estilos para Fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <!--Angular JS-->
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/app.js"></script>
+
+    <title>Evaluacion1</title>
+</head>
+<body>
+<div class="container">
+
+                <h1>Profesor</h1>
+                <div ng-controller="profesorController as pc">
+                              
+                        <h4>{{profesor.nombre}}</h4>
+                        <hr>
+                        
+                        <div class="row">
+                        
+                        <!-- Div que contiene la imagen del profesor -->
+                        <div class="col-sm-3">
+                                <section class="panel">
+                                <div class="panel-body" align="center">
+                                        <img ng-src="{{profesor.foto}}" class="img-circle" alt="" width="150px" height="150px">
+                                </div>
+                                </section>
+                                <button class="btn btn-primary" ng-click="editar()">Editar</button>
+                        </div>
+                        <div class="col-sm-9">
+                                        <section class="panel">
+                                            <div class="panel-body">
+                                                {{profesor.bio}}
+                                                <br>
+                                                <br>
+                                                <strong>Edad:</strong> {{profesor.edad}}   
+                                            </div>
+                                        </section>
+                                    </div>
+                <div class="row {{animacion}}" ng-show="mostrarCaja">                 
+                    Nombre    
+                    <input type="text" ng-model="editando.nombre" class="form-control">
+                    <button class="btn btn-danger" ng-click="cancelar()">CANCELAR</button><br>
+                    <button class="btn btn-warning" ng-click="guardar()">GUARDAR</button>   
+                </div>                  
+            </div>
+
+                 <h1>Video</h1>
+                 <div ng-controller="videoController as vc">
+                               
+                         <h4>{{vc.video.titulo}}</h4>
+                         <hr>
+                         
+                         <div class="row">
+                         
+                         
+                         <div class="col-sm-3">
+                                 <section class="panel">
+                                 <div class="panel-body" align="center">
+                                               <!-- <iframe width="560" height="315" ng-src="https://www.youtube.com/watch?v=M8SoQAeUt_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                                 </div>
+                                 </section>
+                         </div>
+                         <div class="col-sm-9">
+                                         <section class="panel">
+                                             <div class="panel-body">
+                                                 {{vc.video.codigo}}
+                                                 <br>
+                                                 <br>
+                                                 <p class="btn-like btn-success mt-2 {{animation}}" ng-click="sumarLikes()">{{video.megusta}} likes <i class="fas fa-heart text-danger mr-2"></i></p>
+                                             </div>
+                                         </section>
+                                     </div>
+                         
+                     
+                      
+                  </div>
+                  <hr>
+                  <div class="col" ng-controller="animalesController">
+                    <h2>Ejemplo directiva ng-repeat</h2>
+                    <br>
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item" ng-repeat="animal in animales" ng-click="selec(animal)">{{animal}}</li>
+                    </ul>
+                    {{animalesJson}}
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item" ng-repeat="aj in animalesJson" ng-click="selec(animal)">{{animal}}</li>
+                    </ul>
+                  </div>
+</div>    
+</body>
+</html>

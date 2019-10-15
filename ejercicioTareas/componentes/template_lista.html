@@ -1,0 +1,42 @@
+
+<p ng-show="tareas.length == 0">Cargando tareas...</p>
+<div class="row">
+    <div class="col">
+        <input type="text" class="form-control" ng-model="nuevaTarea" placeholder="descripcion">
+        <button class="btn btn-block btn-primary" ng-click="crearTarea()">Nueva tarea</button>
+    </div>
+
+    <div class="col">
+        <input type="text" class="form-control" ng-model="cambiarTarea" placeholder="descripcion">
+        <button class="btn btn-block btn-primary" ng-click="editarTarea()">Editar tarea</button>
+    </div>
+</div>
+
+<div class="row">
+        <div class="col">
+            <input type="text" class="form-control" ng-model="descripcion" placeholder="Filtrar por nombre">
+            <button class="btn btn-block btn-primary" ng-click="crearTarea()">Nueva tarea</button>
+        </div>
+    
+        <div class="col">
+            <input type="text" class="form-control" ng-model="cambiarTarea" placeholder="Filtrar por completadas/No completadas">
+            <button class="btn btn-block btn-primary" ng-click="editarTarea()">Editar tarea</button>
+        </div>
+    </div>
+
+<p class="text-danger">{{mensajeValidar}}</p>
+
+
+<ul class="list-group">   
+
+        <li class="list-group-item {{ (task.completada)?'tachado':'' }}" 
+            ng-repeat="task in tareas">
+    
+                <span class="badge badge-pill {{ (!task.completada)?'badge-primary':'badge-secondary' }}">{{task.id}}</span>
+                {{task.descripcion}}       
+                <span class="float-right m-2"> <button class="btn  btn-danger" ng-click="eliminarTarea(task)"><i class="fas fa-backspace"></i></button></span> 
+                <span class="float-right m-2"> <button class="btn  btn-success" ng-click="editarTarea(task)"><i class="far fa-edit"></i></button> </span>
+                <span class="float-right m-2"> <input type="checkbox" class="form-check-input " id="exampleCheck1"></span>
+    
+        </li>  
+    </ul>

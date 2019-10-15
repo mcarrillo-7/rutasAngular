@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app> <!--directiva para decir que es una aplicacion de angular-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--hoja de estilos css-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Angular JS-->
+    <script src="js/angular.min.js"></script>
+
+    <title>Primeros pasos con Angular JS</title>
+</head>
+<body>
+    <h1>Bienvenido al purgatorio de Angular JS</h1>
+    <a class="btn btn-secondary" href="https://docs.angularjs.org/api/ng/filter/">Cómo utilizar los diferentes filtros</a>
+    <br>
+    <h3 class="bg-danger text-white">EN MAYUSCULAS: {{"Vas a morir" | uppercase }}</h3>
+    <h3 class="bg-warning text-white"> EN MINUSCULAS: {{"Texto en MINUSCULAS" | lowercase}}</h3>
+    <h3 class="bg-danger text-white">FILTRO CURRENCY: {{ 1983.4 | currency:"USD$":0}}</h3>
+    <h2 class="bg-primary text-white">FILTRO NUMBER:</h2>
+
+    <div class="container border border-info">
+        <ul class="list-group">
+                <li class="list-group-item">{{12.34 | number}} -- <span class="text-success"> Número con el formato decimal</span></li>
+                <li class="list-group-item">{{12.34 | number:1}} -- <span class="text-success"> Número con el formato decimal con solo un decimal</span></li>
+                <li class="list-group-item">{{-12.34 | number:2}} -- <span class="text-success"> Número negativo con el formato decimal con dos décimas</span></li>
+            </ul>
+    </div>
+<h2 class="bg-primary text-white">FILTRO DATE:</h2>
+    <div class="container border border-success">
+            <ul class="list-group">
+                    <li class="list-group-item">{{"20191003T00:00:00" | date:'yyyy-MM-dd HH:mm:ss Z'}} -- <span class="text-info"> Número con el formato decimal</span></li>
+                    <li class="list-group-item">{{12.34 | number:1}} -- <span class="text-info"> Número con el formato decimal con solo un decimal</span></li>
+                    <li class="list-group-item">{{-12.34 | number:2}} -- <span class="text-info"> Número negativo con el formato decimal con dos décimas</span></li>
+                </ul>
+        </div> 
+
+<h2 class="bg-black text-muted">DIRECTIVA NG-MODEL:</h2>
+<h5>Equipo de futbol favorito {{equipo}}</h5>
+        <input type="text" ng-model="equipo" class="form-control" placeholder="Equipo de futbol">
+
+<p> Es de {{ciudad}}
+    <select ng-model="ciudad">
+        <option value="BCN">Barcelona</option>
+        <option value="MAD">Madrid</option>
+        <option value="BIL">Bilbao</option>
+        <option value="VAL">Valencia</option>
+        <option value="SEV">Sevilla</option>
+    </select>
+</p>
+
+<p>Trofeos ganados: {{trofeo1}}  {{trofeo2}} {{trofeo3}} {{trofeo4}} {{trofeo5}}
+        <input class="form-check-input" type="checkbox" value="Liga" ng-model="trofeo1" > Liga <br>
+        <input class="form-check-input" type="checkbox" value="CopaEuropa" ng-model="trofeo2" > Copa de Europa <br>
+        <input class="form-check-input" type="checkbox" value="CopaDelRey" ng-model="trofeo3" > Copa del "Gay" <br>
+        <input class="form-check-input" type="checkbox" value="Supercopa" ng-model="trofeo4" > Supercopa Egpaña <br>
+        <input class="form-check-input" type="checkbox" value="Mundial" ng-model="trofeo5" > Mundialito <br>
+</p>
+
+<p>¿Es el mejor del mundo?
+    
+</p>
+</body>
+</html>

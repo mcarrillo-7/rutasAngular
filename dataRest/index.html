@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="ejemplosApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>http-request</title>
+
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+
+        <script src="js/app.js"></script>
+        
+    </head>    
+    <body>
+
+        <div class="container" ng-controller="mainCtrl">
+            
+            <h1>$HTTP Request</h1>
+            <h4>Data dinámica</h4>
+            <hr>
+            <p>Debemos inyectar la palabra $http en el controlador</p>
+            <p>Acordarse de que las periciones son con Ajax y asinctronas. Mirar trazas de consola</p>
+            <p>Inseresante usar las herramientas desarrollo de Chrome, la pestaña NETWORKS (XHR)</p>
+            <p>{{profesores}}</p>
+
+
+
+        </div><!-- fin del listadoCtrl -->
+
+    </body>
+</html>
