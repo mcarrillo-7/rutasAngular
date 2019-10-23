@@ -1,0 +1,11 @@
+body{
+    background-image: url("../images/todo.jpg");
+    background-color: blue;
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+}
+.tachado{
+    text-decoration: line-through;
+    color: gray;
+}

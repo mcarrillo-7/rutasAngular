@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="componentesApp"> <!--directiva para decir que es una aplicacion de angular-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--hoja de estilos css-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Angular JS-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="componentes/boton/componente-btn.js"></script>
+    <script src="js/componente-saludar.js"></script>
+    <script src="componentes/calificacion/calificacion-comp.js"></script>
+    <script src="componentes/calificacion/calificar-pepe.js"></script>
+    <script src="js/phone-list.component.js"></script>
+
+    <title>Primeros pasos con Angular JS</title>
+</head>
+<body>
+    <h1>Ejercicio Componentes</h1>
+    <a href="https://docs.angularjs.org/tutorial/step_03" target="_blank">Documentacion Componentes</a>
+    <br>
+    <a href="https://docs.angularjs.org/guide/component" target="_blank">Documentacion Oficial Componentes</a>
+<br>
+    <h2 class="text-info bg-warning">Nuestro primer componente</h2>
+    <saludo-usuario></saludo-usuario>
+<br>
+    <h2 class="text-info bg-warning">Nuestro segundo componente con el template para el HTML</h2>
+    <componente-btn></componente-btn>
+<br>
+    <h2 class="text-info bg-warning">Elercicio de las calificaciones</h2>
+    <componente-notas></componente-notas>
+
+    <br>
+    <h2 class="text-info bg-warning">Calificaciones Pepe</h2>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">HTML<componente-notas-pepe pnota=5></componente-notas-pepe></li>
+        <li class="list-group-item">CSS<componente-notas-pepe pnota=8></componente-notas-pepe></li>
+        <li class="list-group-item">JS<componente-notas-pepe pnota=7></componente-notas-pepe></li>
+        <li class="list-group-item">AngularJS<componente-notas-pepe pnota=3></componente-notas-pepe></li>
+      </ul>
+        
+
+      <h2>Lista de telefonos</h2>
+      <phone-list></phone-list> 
+        
+
+        
+
+        
+
+
+</body>
+</html>

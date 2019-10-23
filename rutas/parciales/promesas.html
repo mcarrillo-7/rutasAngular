@@ -1,0 +1,20 @@
+<div ng-controller="promesasController">
+
+    <h2>{{titulo}}</h2>
+    <p>Es un objeto que actúa como proxy en los casos en los que no se puede retornar el verdadero valor porque aún no se conoce pero no se puede bloquear la función esperando a que llegue.</p>
+
+    <div class="border p-2">
+        <p> 2 + 3 = {{ resultado1 }} </p>
+        <p> 5 + 5 = {{ resultado2 }}</p>
+        <p>TOTAL sumas = {{ resultadoTotal }}</p>
+    </div>
+
+    <p>Cambiar alguna de las llamadas a las promesas para que falle</p>
+    <p><code>$scope.p2 =   $scope.sumar( 5, 5 , <b>true</b> , 5000 );</code></p>
+
+    <p>Usamos <b>$q.all([arrayPromesas])</b> para esperar a todas</p>
+  
+
+</div>
+
+

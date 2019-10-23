@@ -1,0 +1,76 @@
+<div ng-controller="serviciosController">
+<h1>{{titulo}}</h1>
+
+<p>AngularJS tiene realmente 5 tipos distintos de servicios:</p>
+
+<ol>
+    <li>Constantes</li>
+    <li>Valores</li>
+    <li>Servicios</li>
+    <li>Factorías</li>
+    <li>Proveedores</li>
+</ol>
+
+<p>Los nombres de los servicios deben seguir la misma nomenclatura que los nombre de las variables. Es decir que la primera palabra debe ser en minúscula y el resto de palabras deben empezar en mayúscula: Camelcase</p>
+
+<div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
+        <div class="card-header">Constantes</div>
+        <div class="card-body">
+          <h5 class="card-title">Es un servicio al que le pasamos directamente el valor de dicho servicio y se puede inyectar en cualquier sitio:</h5>
+          <p class="card-text"> <span class="text-muted"></span> <pre>{{const | json}}</pre></p>
+        </div>
+</div>
+
+<h3>Ejemplo de Services</h3>
+<div class="card text-white bg-danger mb-3" style="max-width: 80rem;">
+        <div class="card-header">Vamos a probar Services</div>
+        <div class="card-body">
+          <h5 class="card-title">Creamos una función para calcular el área de un rectangulo... Area = {{area}}</h5>
+          <p class="card-text text-white"><pre>function Rectangulo() {
+                this.ancho=0;
+                this.alto=0;
+               
+                this.setAncho=function(ancho) {
+                  this.ancho=ancho;
+                }
+                 
+                this.setAlto=function(alto) {
+                  this.alto=alto;
+                }  
+                 
+                this.getArea=function() {
+                  return this.ancho * this.alto;
+                }
+              }
+              app.service("rectangulo",Rectangulo);
+              </pre></p>
+        </div>
+</div>
+<div class="card bg-success mb-3" style="max-width: 80rem;">
+        <div class="card-header">Segundo ejemplo de Services</div>
+        <div class="card-body">
+          <h5 class="card-title">Esta vez calcularemos el área del rectangulo a partir de unos valores iniciales. El área sera {{area2}}</h5>
+          <p class="card-text"><pre>function Rectangulo2(tamanyoInicial) {
+                this.ancho=tamanyoInicial.ancho;
+                this.alto=tamanyoInicial.alto;
+                 
+                this.setAncho=function(ancho) {
+                  this.ancho=ancho;
+                }
+                 
+                this.setAlto=function(alto) {
+                  this.alto=alto;
+                }  
+                 
+                this.getArea=function() {
+                  return this.ancho * this.alto;
+                }
+              }
+              app.value("tamanyoInicialRectangulo",{
+                ancho:4,
+                alto:5
+              });
+              app.service("rectangulo2",['tamanyoInicialRectangulo',Rectangulo2]);</pre></p>
+        </div>
+      </div>
+</div>

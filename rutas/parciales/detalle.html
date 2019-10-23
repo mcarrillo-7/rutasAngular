@@ -1,0 +1,35 @@
+<div ng-controller="detalleController">
+    <h1 class="text-warning">Detalle de {{name | capitalizar}}</h1>
+
+    <div class="card mb-3 border border-danger" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{pokemons.sprites.front_shiny}}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title h1 text-danger">{{name | capitalizar}}</h5>
+              <p class="card-text">Peso: {{pokemons.weight}} / Altura: {{pokemons.height}} </p>
+              <h4>Tipos:</h4>
+                <ul ng-repeat="tipo in pokemons.types">
+                      <li>{{tipo.type.name}}</li>
+                </ul>
+              
+               <h4>Movimientos</h4>
+                  <ul ng-repeat="mov in pokemons.moves">
+                        <li>{{mov.move.name}}</li>
+                  </ul>
+
+              <p class="card-text"><small class="text-muted">
+                <h4>Habilidades</h4>
+                <ul ng-repeat="habilidad in pokemons.abilities">
+                      <li>{{habilidad.ability.name}}</li>
+                </ul>
+              </small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        
+</div>

@@ -1,0 +1,27 @@
+<h1>Frutas</h1>
+
+<div class="row">
+    <div class="col"><i class="fas fa-search"></i> <input type="text" ng-model="buscar.nombre" placeholder="Buscar por nombre"></div>
+    <div class="col float-right"><i class="fas fa-search"></i> <input type="text" ng-model="buscar.color" placeholder="Buscar por color"></div>
+</div>
+
+<br>
+<table class="table table-borderless table-dark">
+    <thead>
+      <tr>
+        <th scope="col" class="bg-info" ng-click="orden = 'id'; reverse = !reverse">Id</th>
+        <th scope="col" class="bg-info" ng-click="orden = 'nombre'; reverse = !reverse">Nombre de la Fruta</th>
+        <th scope="col" class="bg-info" ng-click="orden = 'color'; reverse = !reverse">Color de la Fruta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="fruta in frutas | filter:buscar | orderBy:orden : reverse |limitTo:pos |limitTo:-2 | orderBy:'color' : reverse ">
+        <td>{{fruta.id}}</td>
+        <td>{{fruta.nombre}}</td>
+        <td>{{fruta.color}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-outline-success" ng-click="anterior()"><i class="fas fa-backward"></i> BACK</button>
+  <button class="btn btn-outline-success float-right" ng-click="posterior()"> NEXT <i class="fas fa-forward"></i></button>

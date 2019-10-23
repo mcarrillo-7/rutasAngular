@@ -1,0 +1,46 @@
+<div ng-controller="crudController" >
+  <h1 class="text-success">{{titulo | capitalizar}}</h1>
+  
+
+        <div class="form-row">
+          <div class="col border border-info">
+            <input type="text" ng-model="nombre" placeholder="Añadir cancion..." class="form-control">
+            <button class="btn btn-success" ng-disabled="nombre.length<=3" ng-click="nuevaCancion(nombre)">Nueva canción</button>
+            <br>
+            <span ng-hide="nombre.length>3">Escribe por lo menos 3 caracteres</span>
+            <componente-alert ng-show="alerta.clase" clase="{{alerta.clase}}" texto="{{alerta.texto}}"></componente-alert>
+          </div>
+          <div class="col border border-primary">
+            <input type="text" ng-model="busqueda.nombre" placeholder="Buscar cancion..." class="form-control">
+          </div>
+
+
+          <div class="col">
+            <hr>
+                <h2 class="text-danger">Editar cancion</h2>    
+            <input type="text" ng-model="cancionEditar.id">  
+            <input type="text" ng-model="cancionEditar.nombre">  
+            <button class="btn btn-primary" ng-click="editar()" ng-disabled="cancionEditar.nombre.length<3" >Guardar</button>
+            <p ng-hide="cancionEditar.nombre.length>=3">Escribe por lo menos 3 caracteres</p>
+          </div>
+        </div>
+  
+        <table class="table table-border table-secondary">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="cancion in canciones | filter:busqueda">
+                    <th scope="row">{{cancion.id}}</th>
+                    <td>{{cancion.nombre}} <button class="btn btn-info float-right" ng-click="cambiar(cancion)"><i class="far fa-edit"></i></button> 
+                      <button class="btn btn-danger float-right" ng-click="eliminarC(cancion)"><i class="far fa-trash-alt"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+        </table>
+  
+
+</div>

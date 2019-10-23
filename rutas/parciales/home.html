@@ -1,0 +1,68 @@
+<h1 class="text-success">Home</h1>
+
+<p>Pasos para montar el sistema de Routing de AngularJS</p>
+<ol>
+    <li>Descargar e incluir en <b>index.html</b> la libreria <code>angular.route.js</code></li>
+    <li>Definir e incluir en <b>index.html</b>como funcionan las rutas <code>js/config.js</code></li>
+    <li>incluir en <b>index.html</b> la directiva <code> ng-view </code> para que cambie las vistas</li>
+</ol>
+<div class="col">
+    <h2>Ejercicios de AngularJS</h2>
+    <ul>
+        <li><a href="../ejemplos/ejercicio1/index.html">Ejercicio 1: Filtros</a></li>
+        <li><a href="../ejemplos/ejercicio2/index.html">Ejercicio 2: Profesor</a></li>
+        <li><a href="../ejemplos/evaluacion1/index.html">Ejercicio 3: Evaluación (ng-model)</a></li>
+        <li><a href="../ejemplos/tuttifruti/index.html">Ejercicio de las frutas</a></li>
+        <li><a href="../ejemplos/ejercicioDatosLocalizacion/index.html">Cómo geolocalizar nuestra ubicación</a></li>
+        <li><a href="../ejemplos/ejercicioTareas/index.html">Tareas</a></li>
+        <li><a href="../ejemplos/crudTareas/index.html">Ejemplo CRUD Tareas</a></li>
+        <li><a href="../ejemplos/edicionSimple/index.html">Simple</a></li>
+        <li><a href="../ejemplos/httpRequest/index.html">Prueba httpRequest</a></li>
+    </ul>
+</div>
+
+<h2>Documentacion</h2>
+
+<ul>
+    <li>
+        <a href="https://docs.angularjs.org/api" target="_blank"> Oficial (en inglés)</a>
+    </li>
+
+    <li>
+        <a href="https://www.cursoangularjs.es/" target="_blank">En castellano</a>
+    </li>
+</ul>
+<h3>Ejemplo Rutas</h3>
+<pre><code>
+
+        app.config( function( $routeProvider ){
+
+            $routeProvider
+              .when('/',{
+                  templateUrl: 'parciales/home.html'
+              })
+              .when('/alumnos',{
+                  templateUrl: 'parciales/alumnos.html'
+              })
+              .when('/profesores',{
+                  templateUrl: 'parciales/profesores.html'
+              })
+              .otherwise({
+                redirectTo: '/'
+              })
+          
+          })
+</code></pre>
+
+<h3>Ejemplo ruta con parámetros</h3>
+<p>
+  Aqui tenemos varios ejemplos para mostrar datos de un Pokemon pasándole un parámetro
+</p>
+<ul>
+    <li><a ng-href="#!/detalle/3">Detalle Pokemon nº 3</a></li>
+    <li><a ng-href="#!/detalle/11">Detalle Pokemon nº 11</a></li>
+    <li><a ng-href="#!/detalle/150">Detalle Pokemon nº 150</a></li>
+    <li><a ng-href="#!/detalle/678">Detalle Pokemon nº 678</a></li>
+    <li><a ng-href="#!/detalle/800">Detalle Pokemon nº 800</a></li>
+</ul>
+

@@ -1,0 +1,21 @@
+<div ng-controller="pokemonController">
+    <h2 class="text-danger">{{titulo}}</h2> <!--id del parametro que vamos a leer-->
+
+<table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">Nombre</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="pokemon in pokemons.results">
+      
+        <td> <a ng-href="#!/detalle/{{pokemon.name}}">{{pokemon.name}} </a></td>
+
+      </tr>
+      <td>Y muchos, muchos mas... ¡HAZTE CON TODOS!</td>
+    </tbody>
+  </table>
+</div>
